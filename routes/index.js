@@ -6,7 +6,7 @@ router.get('/', async function(req, res, next ){
   const autores = await Autor.selecionar();
   res.json(autores.rows);
 });
-router.get('/inserir', async function(req, res, next) {
+router.post('/inserir', async function(req, res, next) {
   let autor = {
     nome:"samara",
     sobrenome:"sona",
@@ -26,6 +26,7 @@ router.get('/atualizar', async function(req, res, next){
   const autores = await Autor.atualizar(autor, 3);
   res.json(autores.rows);
 });
+
 
 
 
