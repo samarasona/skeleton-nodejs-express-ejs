@@ -7,21 +7,13 @@ router.get('/', async function(req, res, next ){
   res.json(autores.rows);
 });
 router.post('/inserir', async function(req, res, next) {
-  
-  
-  
   const autores = await Autor.inserir(req.body);
    res.json(autores.rows);
 
 }) ;
 
-router.get('/atualizar', async function(req, res, next){
-  let autor ={
-    nome:"samara",
-    sobrenome:"sona",
-  datanascimento:"2005-01-12"
-  };
-  const autores = await Autor.atualizar(autor);
+router.put('/atualizar', async function(req, res, next){
+  const autores = await Autor.atualizar(req.body);
   res.json(autores.rows);
 });
 
